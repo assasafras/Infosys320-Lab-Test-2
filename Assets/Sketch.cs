@@ -18,7 +18,7 @@ public class Sketch : MonoBehaviour {
         }
 
         //We can now deserialize into an array of objects - in this case the class we created. The deserializer is smart enough to instantiate all the classes and populate the variables based on column name.
-        Product[] products = JsonReader.Deserialize<Product[]>(jsonResponse);
+        Town[] towns = JsonReader.Deserialize<Town[]>(jsonResponse);
 
         //----------------------
         //YOU WILL NEED TO DECLARE SOME VARIABLES HERE SIMILAR TO THE CREATIVE CODING TUTORIAL
@@ -29,10 +29,8 @@ public class Sketch : MonoBehaviour {
         //----------------------
 
         //We can now loop through the array of objects and access each object individually
-        foreach (Product product in products)
+        foreach (Town town in towns)
         {
-            //Example of how to use the object
-            Debug.Log("This products name is: " + product.ProductName);
             //----------------------
             //YOUR CODE TO INSTANTIATE NEW PREFABS GOES HERE
             float perc = i / (float)totalCubes;
@@ -46,7 +44,7 @@ public class Sketch : MonoBehaviour {
 
             newCube.GetComponent<CubeScript>().SetSize(.45f * (1.0f - perc));
             newCube.GetComponent<CubeScript>().rotateSpeed = .2f + perc * 4.0f;
-            newCube.transform.Find("New Text").GetComponent<TextMesh>().text = product.ProductName;//"Hullo Again";
+            //newCube.transform.Find("New Text").GetComponent<TextMesh>().text = town.TownName;//"Hullo Again";
             i++;
 
             //----------------------
