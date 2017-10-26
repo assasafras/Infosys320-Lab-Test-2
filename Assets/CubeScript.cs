@@ -2,15 +2,12 @@
 using System.Collections;
 
 public class CubeScript : MonoBehaviour {
-    public float rotateSpeed = 1.0f;
-    public Vector3 spinSpeed = Vector3.zero;
-    Vector3 spinAxis = new Vector3(0, 1, 0);
+    public float rotateSpeed;
+    public Vector3 spinSpeed;
+    Vector3 spinAxis;
 
 
 	void Start () {
-        spinSpeed = new Vector3(Random.value, Random.value, Random.value);
-        spinAxis = Vector3.up;
-        spinAxis.x = (Random.value - Random.value)*.1f;
 
 	}
 	
