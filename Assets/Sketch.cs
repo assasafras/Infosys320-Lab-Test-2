@@ -36,9 +36,9 @@ public class Sketch : MonoBehaviour {
             float perc = i / (float)totalCubes;
             float sin = Mathf.Sin(perc * Mathf.PI / 2);
 
-            float x = 1.8f + sin * totalDistance;
-            float y = 5.0f;
-            float z = 0.0f;
+            float x = town.Longitude;
+            float y = town.Altitude;
+            float z = town.Latitude;
 
             var newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
 
