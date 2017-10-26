@@ -5,6 +5,7 @@ public class CubeScript : MonoBehaviour {
     public float rotateSpeed;
     public Vector3 spinSpeed;
     Vector3 spinAxis;
+    public Mesh sphereMesh;
 
 
 	void Start () {

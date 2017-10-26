@@ -41,9 +41,13 @@ public class Sketch : MonoBehaviour {
             float z = town.Latitude;
 
             var newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
-
-            newCube.GetComponent<CubeScript>().SetSize(town.Size);
+            CubeScript cubeScript = newCube.GetComponent<CubeScript>();
+            cubeScript.SetSize(town.Size);
             newCube.transform.Find("New Text").GetComponent<TextMesh>().text = town.TownName;
+            if(town.Symbol == "Sphere")
+            {
+                cubeScript.GetComponent<MeshFilter>().mesh = cubeScript.sphereMesh;
+            }
             i++;
 
             //----------------------
