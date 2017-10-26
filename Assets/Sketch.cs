@@ -42,7 +42,7 @@ public class Sketch : MonoBehaviour {
 
             var newCube = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
 
-            newCube.GetComponent<CubeScript>().SetSize(.45f * (1.0f - perc));
+            newCube.GetComponent<CubeScript>().SetSize(town.Size);
             newCube.transform.Find("New Text").GetComponent<TextMesh>().text = town.TownName;
             i++;
 
