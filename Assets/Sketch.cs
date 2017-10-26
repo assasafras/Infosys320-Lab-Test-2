@@ -47,6 +47,7 @@ public class Sketch : MonoBehaviour {
             if(town.Symbol == "Sphere")
             {
                 cubeScript.GetComponent<MeshFilter>().mesh = cubeScript.sphereMesh;
+                cubeScript.GetComponent<MeshRenderer>().material.color = Color.green;
             }
             i++;
 
